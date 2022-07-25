@@ -14,3 +14,4 @@
 Reforcei conceitos como:
 - Diferença entre programação declarativa e imperativa  
 - Quando componentizar certas partes do código
+- Entendendo mais profundamente a key do React
