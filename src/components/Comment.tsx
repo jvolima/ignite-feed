@@ -3,7 +3,12 @@ import styles from "./Comment.module.css";
 import { Avatar } from "./Avatar";
 import { useState } from "react";
 
-export function Comment({ content, handleDeleteComment }) {
+interface CommentProps {
+  content: string;
+  handleDeleteComment: (comment: string) => void;
+}
+
+export function Comment({ content, handleDeleteComment }: CommentProps) {
   const [likeCount, setLikeCount] = useState(0);
 
   function handleLikeComment() {
@@ -12,7 +17,7 @@ export function Comment({ content, handleDeleteComment }) {
 
   return (
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src="https://github.com/jvolima.png" />
+      <Avatar hasBorder={false} src="https://github.com/jvolima.png" alt="" />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
@@ -22,7 +27,7 @@ export function Comment({ content, handleDeleteComment }) {
               <time title="22 de Julho às 13:24h" dateTime="2022-07-22 13:24:00">Cerca de 1h atrás</time>
             </div>
 
-            <button title="Deletar comentário" onClick={handleDeleteComment}>
+            <button title="Deletar comentário" onClick={() => handleDeleteComment(content)}>
               <Trash size={24} />
             </button>
           </header>
