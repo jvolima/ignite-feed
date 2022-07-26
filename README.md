@@ -9,6 +9,7 @@
 - React
 - CSS
 - Vite
+- Typescript
 
 ## Aprendizados
 Reforcei conceitos como:
